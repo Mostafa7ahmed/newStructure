@@ -1,20 +1,25 @@
 <header [class.scrolled]="isScrolled" class="navbar">
-    <div class="logo">
-        <img src="images/Asset 49.png" width="50" alt="">
-    </div>
-    <nav>
-        <ul>
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/">Trips</a></li>
-            <li><a routerLink="/">Taxi </a></li>
-            <li><a routerLink="/">About Us</a></li>
-            <li><a routerLink="/">Contact Us</a></li>
+  <div class="logo">
+    <img src="images/Asset 49.png" width="50" alt="" />
+  </div>
 
+  <nav [class.open]="menuOpen">
+    <ul>
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">Trips</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">Taxi</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">About Us</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">Contact Us</a></li>
+    </ul>
+  </nav>
 
-        </ul>
-    </nav>
-    <div class="contacts">
-        <span>+20 106 603 5820</span>
-        <span>+20 111 540 5888</span>
-    </div>
+  <div class="contacts">
+    <span>+20 106 603 5820</span>
+    <span>+20 111 540 5888</span>
+  </div>
+
+  <div class="burger" (click)="toggleMenu()">
+    <span *ngIf="!menuOpen">&#9776;</span>
+    <span *ngIf="menuOpen">&times;</span>
+  </div>
 </header>
