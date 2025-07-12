@@ -4,13 +4,13 @@
   </div>
 
   <nav [class.open]="menuOpen">
-    <ul>
-      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
-      <li><a routerLink="/" (click)="closeMenu()">Trips</a></li>
-      <li><a routerLink="/" (click)="closeMenu()">Taxi</a></li>
-      <li><a routerLink="/" (click)="closeMenu()">About Us</a></li>
-      <li><a routerLink="/" (click)="closeMenu()">Contact Us</a></li>
-    </ul>
+<ul>
+  <li><a routerLink="/home" (click)="closeMenu()">Home</a></li>
+  <li><a routerLink="/trip" (click)="closeMenu()">Trips</a></li>
+  <li><a routerLink="/taxi" (click)="closeMenu()">Taxi</a></li>
+  <li><a routerLink="/about" (click)="closeMenu()">About Us</a></li>
+  <li><a routerLink="/contact-us" (click)="closeMenu()">Contact Us</a></li>
+</ul>
   </nav>
 
   <div class="contacts">
