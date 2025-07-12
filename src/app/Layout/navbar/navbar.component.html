@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<header [class.scrolled]="isScrolled" class="navbar">
+    <div class="logo">
+        <img src="images/Asset 49.png" width="50" alt="">
+    </div>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/">Trips</a></li>
+            <li><a routerLink="/">Taxi </a></li>
+            <li><a routerLink="/">About Us</a></li>
+            <li><a routerLink="/">Contact Us</a></li>
+
+
+        </ul>
+    </nav>
+    <div class="contacts">
+        <span>+20 106 603 5820</span>
+        <span>+20 111 540 5888</span>
+    </div>
+</header>
