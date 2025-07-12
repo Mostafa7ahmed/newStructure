@@ -1,0 +1,64 @@
+.error-page {
+  height: 100vh;
+  background: linear-gradient(to right, #0f766e, #0e7490);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+
+  .content {
+    max-width: 600px;
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    button {
+      background-color: white;
+      color: #0f766e;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e2e8f0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content {
+      h1 {
+        font-size: 4rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
