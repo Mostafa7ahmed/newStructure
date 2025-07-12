@@ -1,0 +1,367 @@
+.hero-section {
+  height: 40vh;
+  background: url('../../../../public/images/hero.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+
+   @media (max-width: 768px) {
+  height: 100vh;
+    }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    height: 100%;
+
+    h1 {
+      font-size: 5rem;
+          font-family: "Manufacturing Consent", system-ui;
+  font-weight: 400;
+  font-style: normal;
+      span {
+        color: #ff5520;
+        font-style: italic;
+
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .destinations {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+        transition: transform 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        img {
+          width: 250px;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+
+        p {
+          margin-top: 0.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+
+  .middle-text {
+    text-align: center;
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    color: #334155;
+    font-weight: 500;
+  }
+
+.vehicle-cards {
+  padding: 3rem 1.5rem;
+  background-color: #f9fafb;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 380px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .image-wrapper {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .price-tag {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #ef4444;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .content {
+      padding: 1.5rem;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0 0 0.3rem;
+        color: #1e293b;
+      }
+
+      .class {
+        font-size: 0.9rem;
+        color: #ef4444;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+
+        li {
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+          font-size: 0.95rem;
+          color: #475569;
+
+          i {
+            color: #0ea5e9;
+            margin-right: 8px;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        .outline,
+        .primary {
+          padding: 10px 16px;
+          font-size: 0.95rem;
+          border-radius: 5px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .outline {
+          border: 2px solid #0f766e;
+          background: transparent;
+          color: #0f766e;
+
+          &:hover {
+            background-color: #0f766e;
+            color: white;
+          }
+        }
+
+        .primary {
+          background-color: #0f766e;
+          border: none;
+          color: white;
+
+          &:hover {
+            background-color: #115e59;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+
+    .overlay {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .vehicle-cards {
+    .card {
+      width: 100%;
+    }
+
+    .buttons {
+      flex-direction: column;
+    }
+  }
+}
+
+
+.custom-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.custom-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  position: relative;
+  animation: fadeInUp 0.4s ease;
+
+  .custom-close {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #888;
+    &:hover {
+      color: #f43f5e;
+    }
+  }
+
+  .modal-body-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    .modal-image {
+      flex: 1 1 300px;
+
+      img {
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+      }
+    }
+
+    .modal-info {
+      flex: 1 1 300px;
+
+      h2 {
+        color: #0f766e;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+      }
+
+      .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.5rem;
+
+        li {
+          margin-bottom: 0.75rem;
+          font-size: 1rem;
+          color: #475569;
+          display: flex;
+          align-items: center;
+
+          i {
+            color: #0ea5e9;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .modal-actions {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        button {
+          padding: 10px 20px;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 1rem;
+          cursor: pointer;
+        }
+
+        .outline {
+          background: transparent;
+          border: 2px solid #0f766e;
+          color: #0f766e;
+          &:hover {
+            background-color: #0f766e;
+            color: white;
+          }
+        }
+
+        .primary {
+          background-color: #0f766e;
+          color: white;
+          border: none;
+          &:hover {
+            background-color: #115e59;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal-body-wrapper {
+    flex-direction: column;
+  }
+}

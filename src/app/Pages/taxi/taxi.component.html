@@ -1,0 +1,63 @@
+<div class="hero-section">
+  <div class="overlay">
+    <h1>Travel with <span>MasaTour</span></h1>
+    <p>We offer you trips at the best prices and excellent service</p>
+
+  </div>
+</div>
+    <p class="middle-text mt-3 p-3">
+  Discover unforgettable adventures, crystal-clear waters, and desert wonders — all in one breathtaking destination.
+</p>
+<div class="vehicle-cards">
+
+  <div class="card" *ngFor="let car of vehicles">
+    <div class="image-wrapper">
+      <img [src]="car.image" [alt]="car.name" />
+      <div class="price-tag">
+        <i class="fas fa-money-bill-wave"></i> {{ car.price }}$
+      </div>
+    </div>
+    <div class="content">
+      <h3>{{ car.name }}</h3>
+      <ul class="features">
+        <li><i class="fas fa-users"></i> {{ car.passengers }} passengers</li>
+
+        <li><i class="fas fa-dollar-sign"></i> 1 vehicle: {{ car.price }} USD</li>
+      </ul>
+      <div class="buttons">
+        <button class="outline" (click)="viewDetails(car)">View Details</button>
+        <button class="primary">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Overlay -->
+<div class="custom-modal-overlay" *ngIf="selectedVehicle" (click)="closeModal()">
+  <div class="custom-modal" (click)="$event.stopPropagation()">
+    <span class="custom-close" (click)="closeModal()">&times;</span>
+
+    <!-- محتوى المودال -->
+    <div class="modal-body-wrapper">
+      <!-- صورة العربية -->
+      <div class="modal-image">
+        <img [src]="selectedVehicle.image" [alt]="selectedVehicle.name" />
+      </div>
+
+      <!-- معلومات -->
+      <div class="modal-info">
+        <h2>{{ selectedVehicle.name }}</h2>
+        <ul class="info-list">
+          <li><i class="fas fa-users"></i> {{ selectedVehicle.passengers }} Passengers</li>
+          <li><i class="fas fa-suitcase-rolling"></i> {{ selectedVehicle.bags }} Bags</li>
+          <li><i class="fas fa-dollar-sign"></i> Price: {{ selectedVehicle.price }} USD</li>
+          <li><i class="fas fa-clock"></i> Free delay up to 2 hours</li>
+        </ul>
+        <div class="modal-actions">
+          <button class="outline" (click)="closeModal()">Close</button>
+          <button class="primary">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
